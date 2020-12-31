@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        h1,
+        h2 {
+            text-decoration: underline;
+        }
+
+        .container #youtubeURL {
+            height: 30px;
+            width: 300px;
+        }
+
+        .container button {
+            height: 35px;
+        }
+
+        #images {
+            display: none;
+        }
+
+        #images img {
+            padding: 20px;
+            margin: 20px
+        }
+
+        a {
+            color: black;
+        }
+
+        #loadingGif {
+            height: 160px;
+            width: 160px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#details">
+        <h1>How do I get a YouTube video thumbnail from the YouTube videos link ?</h1>
+    </a>
+    <div class="container">
+        <input type="url" id="youtubeURL" placeholder="Place your youtube video URL here">
+        <button id="getimage"> Get Thumbnail</button>
+    </div>
+    <img src="./Preloader.gif" id="loadingGif" alt="loading gif imaeg">
+    <div id="images">
+        <img id="img1" src="" title="maxresdefault.jpg full hd">
+        <img id="img2" src="" title="sddefault.jpg high mobile quality">
+        <img id="img4" src="" title="hqdefault.jpg low mobile quality">
+        <img id="img3" src="" title="mqdefault.jpg mobile quality">
+        <img id="img5" src="" title="default.jpg no quality haha ;">
+    </div>
+    <h2 id="details"> Details </h2>
+    <code>
+  <pre>
+Each YouTube video has four generated images. They are predictably formatted as follows:
+
+https://img.youtube.com/vi/insert-youtube-video-id-here/0.jpg
+https://img.youtube.com/vi/insert-youtube-video-id-here/1.jpg
+https://img.youtube.com/vi/insert-youtube-video-id-here/2.jpg
+https://img.youtube.com/vi/insert-youtube-video-id-here/3.jpg
+The first one in the list is a full size image and others are thumbnail images. The default thumbnail image (i.e., one of 1.jpg, 2.jpg, 3.jpg) is:
+
+https://img.youtube.com/vi/insert-youtube-video-id-here/default.jpg
+For the high quality version of the thumbnail use a URL similar to this:
+
+https://img.youtube.com/vi/insert-youtube-video-id-here>/hqdefault.jpg
+Ther is also a medium quality version of the thumbnail, using a URL similar to the HQ:
+
+https://img.youtube.com/vi/insert-youtube-video-id-here/mqdefault.jpg
+For the standard definition version of the thumbnail, use a URL similar to this:
+
+https://img.youtube.com/vi/insert-youtube-video-id-here/sddefault.jpg
+For the maximum resolution version of the thumbnail use a URL similar to this:
+
+https://img.youtube.com/vi/<insert-youtube-video-id-here>/maxresdefault.jpg
+All of the above URLs are available over HTTP too. Additionally, the slightly shorter hostname i3.ytimg.com works in place of img.youtube.com in the example URLs above.
+
+  </pre>
+
+</code>
+    Alternatively, you can use the <a href="https://developers.google.com/youtube/v3/">YouTube Data API (v3)</a> to get
+    thumbnail images
+    <a
+        href="https://stackoverflow.com/questions/2068344/how-do-i-get-a-youtube-video-thumbnail-from-the-youtube-api">stackoverflow</a>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
